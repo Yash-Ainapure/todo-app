@@ -1,13 +1,13 @@
 import './AddItemCompo.css'
-function AddItemCompo({ getTodoMedium }) {
-   let value="";
+function AddItemCompo({ dispatch }) {
+   let value = "";
    function handleClick(e) {
       e.preventDefault();
-      getTodoMedium(value);
+      dispatch({ type: "GETDATA", value: value });
    }
-   function handleChange(e){
-      console.log(e.target.name,e.target.value);
-      value=e.target.value;
+   function handleChange(e) {
+      console.log(e.target.name, e.target.value);
+      value = e.target.value;
    }
    return (
       <div className="AddItemCompo">
